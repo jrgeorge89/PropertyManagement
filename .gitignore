@@ -1,0 +1,29 @@
+# Archivos de compilación
+bin/
+obj/
+out/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+*.user
+*.vs/
+.vscode/
+
+# Configuración de entorno
+*.env
+appsettings.Development.json
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Dependencias de pruebas
+TestResults/
+*.coverage
+*.coveragexml
+
+# MongoDB scripts temporales
+mongodb-scripts/*.log
+
