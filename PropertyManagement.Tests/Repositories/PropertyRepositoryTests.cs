@@ -1,10 +1,14 @@
 using MongoDB.Driver;
+using MongoDB.Bson;
 using NUnit.Framework;
 using PropertyManagement.Domain.Entities;
 using PropertyManagement.Infrastructure.Configuration;
 using PropertyManagement.Infrastructure.Data;
 using PropertyManagement.Infrastructure.Repositories;
 using PropertyManagement.Application.DTOs;
+using PropertyManagement.Domain.Common;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Memory;
 
 namespace PropertyManagement.Tests.Repositories;
 
@@ -18,48 +22,38 @@ public class PropertyRepositoryTests
     [SetUp]
     public async Task Setup()
     {
-        // Configuracion de la base de datos de prueba
-        var settings = new MongoDbSettings
-        {
-            ConnectionString = "mongodb://localhost:27017",
-            DatabaseName = "PropertyManagementTestDB"
-        };
+        // Configuración de la base de datos de prueba
+        var configuration = new ConfigurationBuilder()
+            .AddInMemoryCollection(new Dictionary<string, string>
+            {
+                {"MongoDB:ConnectionString", "mongodb://localhost:27017"},
+                {"MongoDB:DatabaseName", "PropertyManagementTestDB"}
+            })
+            .Build();
 
-        _context = new MongoDbContext(settings);
+        _context = new MongoDbContext(configuration);
         _repository = new PropertyRepository(_context);
 
         // Datos de prueba
         _testProperties = new List<Property>
         {
-            new Property
+            new Property("TEST-001", "Casa de Prueba 1", "Dirección 1", 200000, "INT-001", 2020, ObjectId.GenerateNewId())
             {
-                Id = "1",
-                Name = "Casa de Prueba 1",
-                Address = "Dirección 1",
-                Price = 200000,
-                Code = "TEST-001",
-                YearBuilt = 2020,
-                IdOwner = "owner1"
+                Type = "Casa",
+                Zone = "Norte",
+                City = "Bogotá"
             },
-            new Property
+            new Property("TEST-002", "Apartamento de Prueba", "Dirección 2", 150000, "INT-002", 2019, ObjectId.GenerateNewId())
             {
-                Id = "2",
-                Name = "Apartamento de Prueba",
-                Address = "Dirección 2",
-                Price = 150000,
-                Code = "TEST-002",
-                YearBuilt = 2019,
-                IdOwner = "owner2"
+                Type = "Apartamento",
+                Zone = "Centro",
+                City = "Bogotá"
             },
-            new Property
+            new Property("TEST-003", "Casa de Prueba 2", "Dirección 3", 300000, "INT-003", 2021, ObjectId.GenerateNewId())
             {
-                Id = "3",
-                Name = "Casa de Prueba 2",
-                Address = "Dirección 3",
-                Price = 300000,
-                Code = "TEST-003",
-                YearBuilt = 2021,
-                IdOwner = "owner1"
+                Type = "Casa",
+                Zone = "Sur",
+                City = "Bogotá"
             }
         };
 
@@ -79,7 +73,7 @@ public class PropertyRepositoryTests
 
         // Assert
         Assert.That(result, Is.Not.Null);
-        Assert.That(result, Has.Count.EqualTo(3));
+        Assert.That(result.Count(), Is.EqualTo(3));
     }
 
     [Test]
@@ -97,7 +91,7 @@ public class PropertyRepositoryTests
 
         // Assert
         Assert.That(result, Is.Not.Null);
-        Assert.That(result, Has.Count.EqualTo(1));
+        Assert.That(result.Count(), Is.EqualTo(1));
         Assert.That(result.First().Price, Is.GreaterThanOrEqualTo(filter.MinPrice));
         Assert.That(result.First().Price, Is.LessThanOrEqualTo(filter.MaxPrice));
     }
@@ -106,14 +100,14 @@ public class PropertyRepositoryTests
     public async Task GetByIdAsync_ReturnsProperty_WhenIdIsValid()
     {
         // Arrange
-        var propertyId = "1";
+        var propertyId = _testProperties[0].IdProperty;
 
         // Act
         var result = await _repository.GetByIdAsync(propertyId);
 
         // Assert
         Assert.That(result, Is.Not.Null);
-        Assert.That(result.Id, Is.EqualTo(propertyId));
+        Assert.That(result.IdProperty, Is.EqualTo(propertyId));
         Assert.That(result.Code, Is.EqualTo("TEST-001"));
     }
 
@@ -121,7 +115,7 @@ public class PropertyRepositoryTests
     public async Task GetByIdAsync_ReturnsNull_WhenIdNotFound()
     {
         // Arrange
-        var propertyId = "999";
+        var propertyId = ObjectId.GenerateNewId();
 
         // Act
         var result = await _repository.GetByIdAsync(propertyId);
@@ -141,10 +135,11 @@ public class PropertyRepositoryTests
         };
 
         // Act
+        var filteredProperties = await _repository.GetAllAsync(filter);
         var result = await _repository.GetTotalCountAsync(filter);
 
         // Assert
-        Assert.That(result, Is.EqualTo(1));
+        Assert.That(result, Is.EqualTo(filteredProperties.Count()));
     }
 
     [TearDown]

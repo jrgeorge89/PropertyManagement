@@ -2,6 +2,7 @@ using MongoDB.Bson;
 using PropertyManagement.Application.DTOs;
 using PropertyManagement.Application.Interfaces;
 using PropertyManagement.Domain.Interfaces;
+using PropertyManagement.Domain.Exceptions;
 
 namespace PropertyManagement.Application.Services;
 
@@ -50,7 +51,7 @@ public class PropertyService : IPropertyService
         var property = await _propertyRepository.GetByIdAsync(propertyId);
         if (property == null)
         {
-            return new PropertyDetailDto();
+            throw new PropertyNotFoundException(id);
         }
 
         var owner = await _ownerRepository.GetByIdAsync(property.IdOwner);
