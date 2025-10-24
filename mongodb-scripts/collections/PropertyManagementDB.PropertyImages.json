@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "68fa3c93def44b7e7fc914c9"
+  },
+  "idProperty": "68fa3c1adef44b7e7fc914c3",
+  "url": "https://picsum.photos/800/600?random=101",
+  "enabled": true,
+  "createdAt": "2023-05-12T14:23:00.000Z",
+  "updatedAt": "2023-05-12T14:23:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "68fa3c93def44b7e7fc914ca"
+  },
+  "idProperty": "68fa3c1adef44b7e7fc914c3",
+  "url": "https://picsum.photos/800/600?random=102",
+  "enabled": false,
+  "createdAt": "2023-08-12T09:36:00.000Z",
+  "updatedAt": "2023-08-12T09:36:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "68fa3c93def44b7e7fc914cb"
+  },
+  "idProperty": "68fa3c1adef44b7e7fc914c4",
+  "url": "https://picsum.photos/800/600?random=103",
+  "enabled": true,
+  "createdAt": "2024-01-18T11:41:00.000Z",
+  "updatedAt": "2024-01-18T11:41:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "68fa3c93def44b7e7fc914cc"
+  },
+  "idProperty": "68fa3c1adef44b7e7fc914c5",
+  "url": "https://picsum.photos/800/600?random=104",
+  "enabled": true,
+  "createdAt": "2024-03-10T18:16:00.000Z",
+  "updatedAt": "2024-03-10T18:16:00.000Z"
+}]

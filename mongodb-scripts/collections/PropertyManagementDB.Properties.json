@@ -1,0 +1,75 @@
+[{
+  "_id": {
+    "$oid": "68fa3c1adef44b7e7fc914c3"
+  },
+  "code": "PROP-001",
+  "name": "Casa Moderna en Zona Norte de Bogotá",
+  "address": "Calle 101 #45-15, Bogotá",
+  "city": "Bogotá",
+  "zone": "Norte",
+  "price": 230000,
+  "yearBuilt": 2012,
+  "idOwner": "68fa3b61d52bec6f44cebea4",
+  "createdAt": "2022-05-12T12:20:00.000Z",
+  "updatedAt": "2022-05-12T12:20:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "68fa3c1adef44b7e7fc914c4"
+  },
+  "code": "PROP-002",
+  "name": "Apartamento Moderno en Zona Sur de Medellín",
+  "address": "Carrera 52 #16-27, Medellín",
+  "city": "Medellín",
+  "zone": "Sur",
+  "price": 315000,
+  "yearBuilt": 2015,
+  "idOwner": "68fa3b61d52bec6f44cebea5",
+  "createdAt": "2023-02-18T10:55:00.000Z",
+  "updatedAt": "2023-02-18T10:55:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "68fa3c1adef44b7e7fc914c5"
+  },
+  "code": "PROP-003",
+  "name": "Penthouse Moderna en Zona Centro de Cali",
+  "address": "Avenida 3N #14-02, Cali",
+  "city": "Cali",
+  "zone": "Centro",
+  "price": 440000,
+  "yearBuilt": 2018,
+  "idOwner": "68fa3b61d52bec6f44cebea6",
+  "createdAt": "2024-01-20T17:30:00.000Z",
+  "updatedAt": "2024-01-20T17:30:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "68fa3c1adef44b7e7fc914c6"
+  },
+  "code": "PROP-004",
+  "name": "Lote Moderno en Zona Este de Barranquilla",
+  "address": "Calle 67 #23-45, Barranquilla",
+  "city": "Barranquilla",
+  "zone": "Este",
+  "price": 120000,
+  "yearBuilt": 2019,
+  "idOwner": "68fa3b61d52bec6f44cebea7",
+  "createdAt": "2024-04-10T09:15:00.000Z",
+  "updatedAt": "2024-04-10T09:15:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "68fa3c1adef44b7e7fc914c7"
+  },
+  "code": "PROP-005",
+  "name": "Casa Moderna en Zona Oeste de Bucaramanga",
+  "address": "Carrera 40 #67-22, Bucaramanga",
+  "city": "Bucaramanga",
+  "zone": "Oeste",
+  "price": 200000,
+  "yearBuilt": 2020,
+  "idOwner": "68fa3b61d52bec6f44cebea8",
+  "createdAt": "2025-07-28T14:12:00.000Z",
+  "updatedAt": "2025-07-28T14:12:00.000Z"
+}]

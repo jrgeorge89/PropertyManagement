@@ -1,0 +1,44 @@
+[{
+  "_id": {
+    "$oid": "68fa3d0edef44b7e7fc914ce"
+  },
+  "idProperty": "68fa3c1adef44b7e7fc914c3",
+  "dateSale": "2022-11-12T10:00:00.000Z",
+  "value": 180000,
+  "tax": 34200,
+  "createdAt": "2022-11-12T10:00:00.000Z",
+  "updatedAt": "2022-11-12T10:00:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "68fa3d0edef44b7e7fc914cf"
+  },
+  "idProperty": "68fa3c1adef44b7e7fc914c3",
+  "dateSale": "2023-05-12T12:20:00.000Z",
+  "value": 230000,
+  "tax": 43700,
+  "createdAt": "2023-05-12T12:20:00.000Z",
+  "updatedAt": "2023-05-12T12:20:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "68fa3d0edef44b7e7fc914d0"
+  },
+  "idProperty": "68fa3c1adef44b7e7fc914c4",
+  "dateSale": "2023-10-18T11:45:00.000Z",
+  "value": 250000,
+  "tax": 47500,
+  "createdAt": "2023-10-18T11:45:00.000Z",
+  "updatedAt": "2023-10-18T11:45:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "68fa3d0edef44b7e7fc914d1"
+  },
+  "idProperty": "68fa3c1adef44b7e7fc914c4",
+  "dateSale": "2024-02-18T10:55:00.000Z",
+  "value": 315000,
+  "tax": 59850,
+  "createdAt": "2024-02-18T10:55:00.000Z",
+  "updatedAt": "2024-02-18T10:55:00.000Z"
+}]

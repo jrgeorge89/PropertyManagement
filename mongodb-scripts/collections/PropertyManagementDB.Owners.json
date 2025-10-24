@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "68fa3b61d52bec6f44cebea4"
+  },
+  "name": "Ana María Gómez",
+  "address": "Calle 123 #45-67, Bogotá",
+  "photo": "https://i.pravatar.cc/150?img=1",
+  "birthDate": {
+    "$date": "1985-06-15T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68fa3b61d52bec6f44cebea5"
+  },
+  "name": "Carlos Alberto Ruiz",
+  "address": "Carrera 78 #90-12, Medellín",
+  "photo": "https://i.pravatar.cc/150?img=2",
+  "birthDate": {
+    "$date": "1978-03-22T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68fa3b61d52bec6f44cebea6"
+  },
+  "name": "Laura Patricia Valencia",
+  "address": "Avenida 5N #23-45, Cali",
+  "photo": "https://i.pravatar.cc/150?img=3",
+  "birthDate": {
+    "$date": "1990-11-08T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68fa3b61d52bec6f44cebea7"
+  },
+  "name": "Diego Alejandro Martínez",
+  "address": "Calle 45 #12-34, Barranquilla",
+  "photo": "https://i.pravatar.cc/150?img=4",
+  "birthDate": {
+    "$date": "1982-09-30T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68fa3b61d52bec6f44cebea8"
+  },
+  "name": "María José Sánchez",
+  "address": "Carrera 15 #67-89, Bucaramanga",
+  "photo": "https://i.pravatar.cc/150?img=5",
+  "birthDate": {
+    "$date": "1988-12-25T00:00:00.000Z"
+  }
+}]
